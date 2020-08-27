@@ -2,13 +2,12 @@
 
 ## Atualize os seus dados:
 
-- Nome:
+- Nome: Fernando Aparecido da Silva
 - Matrícula:
 - Curso:
 - Semestre/Ano correntes:
 - Link para o seu GitHub:
 
-## [Projeto final:](./Projeto/README.md) 
+## [Projeto final:](./Projeto/README.md)
 
 Apresente uma breve descrição do seu projeto.
-
