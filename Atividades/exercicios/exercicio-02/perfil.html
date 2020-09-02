@@ -4,38 +4,68 @@
     <meta charset="utf-8">
     <title>Perfil</title>
     <style type="text/css">
-        body{
-          margin: 20px;
-        }
-        h1, h3, h4{
-          margin-top: 30px;
-        }
+    body{
+      margin: 20px;
+    }
+    h1, h3, h4{
+      margin-top: 30px;
+    }
 
-        h1{
-          font-family: VAGRounded BT Regular;
-          font-size: 28pt;
-          color: green
-        }
+    h1{
+      font-family: VAGRounded BT Regular;
+      font-size: 28pt;
+      color: green
+    }
 
-        h2{
-          font-family: arial;
-          margin-top: -25px;
-          font-size: 20pt;
-          color: red
-        }
+    h2{
+      font-family: arial;
+      margin-top: -24px;
+      font-size: 20pt;
+      color: red
+    }
 
-        .links{
-          font-size: 12pt;
-          font-style: italic;
-          font-family: sans-serif;
-          color: darkblue
-        }
+    .links{
+      font-size: 12pt;
+      font-style: italic;
+      font-family: sans-serif;
+      color: darkblue
+    }
 
-        p{
-          font-size: 12pt;
-          font-family: VAGRounded BT Regular;
-          font-style: oblique;
-        }
+    a{
+      color: red;
+      background-color: yellow
+    }
+
+    a:hover{
+      background-color: green;
+      font-weight: bold;
+    }
+
+    a:active{
+      background-color: purple;
+      color: white;
+    }
+
+    a:visited{
+      background-color: blue;
+      font-weight: italic;
+      color:white;
+    }
+
+    .flex{
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+    }
+
+    .flex div{
+      background-color: yellow;
+      width: 100px;
+      margin: 10px;
+      line-height: 50px;
+      text-align: center;
+      border-radius: 20px;
+    }
 
     </style>
   </head>
@@ -76,7 +106,7 @@
     </fieldset>
     <br>
 
-    <div class="links">
+    <div class="flex">
       <div>
         <a href="home.html">Home</a>
       </div>

@@ -10,4 +10,4 @@
 
 ## [Projeto final:](./Projeto/README.md)
 
-O projeto consiste numa aplicação web voltada para o gerenciamento de vendas e serviços de uma gráfica digital!
+O projeto consiste numa aplicação web voltada para o gerenciamento de vendas e serviços de uma gráfica digital!!!
