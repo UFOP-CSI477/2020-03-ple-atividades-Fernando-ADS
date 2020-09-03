@@ -1,138 +1,141 @@
 <!DOCTYPE html>
 <html lang="br" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Perfil</title>
-    <style type="text/css">
-    body{
-      margin: 20px;
-    }
-    h1, h3, h4{
-      margin-top: 30px;
-    }
+<head>
+  <meta charset="utf-8">
+  <title>Perfil</title>
 
-    h1{
-      font-family: VAGRounded BT Regular;
-      font-size: 28pt;
-      color: green
-    }
+  <link rel="stylesheet" href="forms.css">
 
-    h2{
-      font-family: arial;
-      margin-top: -24px;
-      font-size: 20pt;
-      color: red
-    }
+  <style type="text/css">
+  body{
+    margin: 20px;
+  }
+  h1, h3, h4{
+    margin-top: 30px;
+  }
 
-    .links{
-      font-size: 12pt;
-      font-style: italic;
-      font-family: sans-serif;
-      color: darkblue
-    }
+  h1{
+    font-family: VAGRounded BT Regular;
+    font-size: 28pt;
+    color: green
+  }
 
-    a{
-      color: red;
-      background-color: yellow
-    }
+  h2{
+    font-family: arial;
+    margin-top: -24px;
+    font-size: 20pt;
+    color: red
+  }
 
-    a:hover{
-      background-color: green;
-      font-weight: bold;
-    }
+  .links{
+    font-size: 12pt;
+    font-style: italic;
+    font-family: sans-serif;
+    color: darkblue
+  }
 
-    a:active{
-      background-color: purple;
-      color: white;
-    }
+  a{
+    color: red;
+    background-color: yellow
+  }
 
-    a:visited{
-      background-color: blue;
-      font-weight: italic;
-      color:white;
-    }
+  a:hover{
+    background-color: green;
+    font-weight: bold;
+  }
 
-    .flex{
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-    }
+  a:active{
+    background-color: purple;
+    color: white;
+  }
 
-    .flex div{
-      background-color: yellow;
-      width: 100px;
-      margin: 10px;
-      line-height: 50px;
-      text-align: center;
-      border-radius: 20px;
-    }
+  a:visited{
+    background-color: blue;
+    font-weight: italic;
+    color:white;
+  }
 
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Perfil</h1>
-      <img width="18%" src="../exercicio-01/img/data.jpg" alt="Data">
-    </header>
+  .flex{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .flex div{
+    background-color: yellow;
+    width: 100px;
+    margin: 10px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 20px;
+  }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Perfil</h1>
+    <img width="18%" src="../exercicio-01/img/data.jpg" alt="Data">
+  </header>
+
+  <br><br>
+
+  <fieldset>
+
+    <legend>DADOS DO PERFIL</legend>
+
+    <label for="foto" id="labelfoto">Foto:</label>
+    <br>
+    <img width="12%" src="../exercicio-01/img/person.jpg" alt="Foto">
+    <br>
+
+    <label for="nome" id="labelNome">Nome:</label>
+    <p>Fernando Silva</p>
+
+    <label for="usuario" id="labelUsuario">Usuário:</label>
+    <p>@fern_</p>
+
+    <label for="email" id="labelEmail">Email:</label>
+    <p>fernando@silva.com</p>
+
+    <label for="dataCriacao" id="labelData">Data de Criação:</label>
+    <p>28/08/2020</p>
+
+    <label for="ultimoAcesso" id="labelAcesso">Último Acesso:</label>
+    <p>28/08/2020 00:03</p>
 
     <br><br>
 
-    <fieldset>
+  </fieldset>
+  <br>
 
-      <legend>DADOS DO PERFIL</legend>
-
-      <label for="foto" id="labelfoto">Foto:</label>
-      <br>
-      <img width="12%" src="../exercicio-01/img/person.jpg" alt="Foto">
-      <br>
-
-      <label for="nome" id="labelNome">Nome:</label>
-      <p>Fernando Silva</p>
-
-      <label for="usuario" id="labelUsuario">Usuário:</label>
-      <p>@fern_</p>
-
-      <label for="email" id="labelEmail">Email:</label>
-      <p>fernando@silva.com</p>
-
-      <label for="dataCriacao" id="labelData">Data de Criação:</label>
-      <p>28/08/2020</p>
-
-      <label for="ultimoAcesso" id="labelAcesso">Último Acesso:</label>
-      <p>28/08/2020 00:03</p>
-
-      <br><br>
-
-    </fieldset>
-    <br>
-
-    <div class="flex">
-      <div>
-        <a href="home.html">Home</a>
-      </div>
-
-      <div>
-        <a href="cadastros.html">Cadastros</a>
-      </div>
-
-      <div>
-        <a href="lancamentos.html">Lançamentos</a>
-      </div>
-
-      <div>
-        <a href="relatorios.html">Relatórios</a>
-      </div>
-
-      <div>
-        <a href="perfil.html">Perfil</a>
-      </div>
-
-      <div class="">
-        <a href="sair.html">Sair</a>
-      </div>
+  <div class="flex">
+    <div>
+      <a href="home.html">Home</a>
     </div>
 
-    <br>
+    <div>
+      <a href="cadastros.html">Cadastros</a>
+    </div>
 
-  </body>
+    <div>
+      <a href="lancamentos.html">Lançamentos</a>
+    </div>
+
+    <div>
+      <a href="relatorios.html">Relatórios</a>
+    </div>
+
+    <div>
+      <a href="perfil.html">Perfil</a>
+    </div>
+
+    <div class="">
+      <a href="sair.html">Sair</a>
+    </div>
+  </div>
+
+  <br>
+
+</body>
 </html>

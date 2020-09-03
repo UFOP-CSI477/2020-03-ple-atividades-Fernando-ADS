@@ -1,0 +1,35 @@
+label{
+  font-weight: bold;
+}
+
+input[type="text"],[type="email"],[type="tel"], [type="date"]{
+  padding: 10px;
+  background-color: #d3d3d3;
+  border: 2px solid grey;
+  border-radius: 15px;
+}
+
+input[type="submit"]{
+  padding: 10px;
+  background-color: #1E90FF;
+  border: 3px solid #191970;
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 11pt;
+}
+
+input[type="reset"]{
+  padding: 10px;
+  background-color: red;
+  border: 3px solid #B22222;
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 11pt;
+}
+
+form > div{
+  padding: 20px;
+  border: 1px solid grey;
+}
