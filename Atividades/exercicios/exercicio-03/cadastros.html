@@ -11,92 +11,103 @@
 
 <body>
   <div class="jumbotron">
-  <header>
-    <h1>Cadastros</h1>
-    <p>Utilizando bootstrap</p>
-    <img width="18%" src="../exercicio-01/img/list.jpg" alt="Listas">
-  </header>
- </div>
+    <header>
+      <h1>Cadastros</h1>
+      <p>Utilizando bootstrap</p>
+      <img width="15%" src="../exercicio-01/img/list.jpg" alt="Listas">
+    </header>
+  </div>
 
   <form action="home.html" method="post">
     <fieldset> <legend>DADOS</legend>
-      <br>
 
-      <label for="nome" id="labelNome">Nome:</label>
-      <input type="text" name="nome" id="nome" placeholder="nome" value="" >
+      <div class="form-group">
+        <label for="nome" id="labelNome">Nome:</label>
+        <input type="text" name="nome" id="nome" placeholder="nome" value="" class="form-control">
+      </div>
 
-      <br><br>
+      <div class="form-group">
+        <label for="rg" id="labelRG" >RG:</label>
+        <input type="text" class="form-control" name="rg" id="rg" placeholder="RG" value="">
+      </div>
 
-      <label for="rg" id="labelRG" >RG:</label>
-      <input type="text" name="rg" id="rg" placeholder="RG" value="">
+      <div class="form-group">
+        <label for="cpf" id="labelCPF">CPF:</label>
+        <input type="text" name="cpf" id="cpf" placeholder="CPF" value="" class="form-control">
+      </div>
 
-      <br><br>
-
-      <label for="cpf" id="labelCPF">CPF:</label>
-      <input type="text" name="cpf" id="cpf" placeholder="CPF" value="">
-
-      <br><br>
-
-      <label for="data" id="labelDataNasc">Data de Nascimento:</label>
-      <input type="date" name="data" id="data">
-
-      <br><br>
-
-      <label>Gênero:</label>
-      <br>
-      <input type="radio" id="feminino" name="genero" value="F">
-      <label for="feminino">Feminino</label>
-      <input type="radio" id="masculino" name="genero" value="M">
-      <label for="masculino">Masculino</label>
-      <input type="radio" id="naoinformou" name="genero" value="NI">
-      <label for="naoinformou">Não Informou</label>
-
-      <br><br>
+      <div class="form-group">
+        <label for="data" id="labelDataNasc">Data de Nascimento:</label>
+        <input type="date" class="form-control" name="data" id="data">
+      </div>
 
 
-      <label for="email" id="labelEmail">Email:</label>
-      <input type="email" name="email" id="email" placeholder="email@email.com" value="">
+      <div class="">
+        <label>Gênero:</label>
 
-      <br><br>
+        <div class="form-group form-check">
+          <input type="radio" id="feminino" name="genero" value="F" class="form-check-input">
+          <label for="feminino">Feminino</label class="form-check-label">
+          </div>
 
-      <label for="telefone" id="labelTel">Telefone:</label>
-      <input type="tel" name="telefone" placeholder="telefone" value="">
+          <div class="form-group form-check">
+            <input type="radio" id="masculino" name="genero" value="M" class="form-check-input">
+            <label for="masculino">Masculino</label class="form-check-label">
+            </div>
 
-      <br><br>
+            <div class="form-group form-check">
+              <input type="radio" id="naoinformou" name="genero" value="NI" class="form-check-input">
+              <label for="naoinformou">Não Informou</label class="form-check-label">
+              </div>
 
-      <label for="endereco" id="labelEndereco">Endereço</label>
-      <input type="text" name="endereco" id="endereco" placeholder="endereço" value="">
+            </div>
 
-      <br><br>
 
-      <label for="cidade">Cidade:</label>
-      <select name="cidade" id="cidade">
-        <option disabled selected value="0">Selecione</option>
-        <option value="1">João Monlevade</option>
-        <option value="2">Belo Horizonte</option>
-        <option value="3">Uberlândia</option>
-        <option value="4">Divinópolis</option>
-        <option value="5">Viçosa</option>
-      </select>
+            <div class="form-group">
+              <label for="email" id="labelEmail">Email:</label>
+              <input type="email" class="form-control" name="email" id="email" placeholder="email@email.com" value="">
+            </div>
 
-      <br><br>
+            <div class="form-group">
+              <label for="telefone" id="labelTel">Telefone:</label>
+              <input type="tel"  class="form-control" name="telefone" placeholder="telefone" value="">
+            </div>
 
-      <input type="button" class="btn btn-primary" value="Cadastrar">
-      <input type="reset" class="btn btn-secondary "value="Limpar">
 
-      <br><br>
-    </fieldset>
+            <div class="form-group">
+              <label for="endereco" id="labelEndereco">Endereço</label>
+              <input type="text" class="form-control" name="endereco" id="endereco" placeholder="endereço" value="">
+            </div>
 
-    <br>
-    <div class="jumbotron">
-      <a href="home.html">Home</a><br>
-      <a href="cadastros.html">Cadastros</a><br>
-      <a href="lancamentos.html">Lançamentos</a><br>
-      <a href="relatorios.html">Relatórios</a><br>
-      <a href="perfil.html">Perfil</a><br>
-      <a href="sair.html">Sair</a><br>
-    </div>
-    <br>
-  </form>
-</body>
-</html>
+
+            <div class="form-group">
+              <label for="cidade">Cidade:</label>
+              <select class="form-control" name="cidade" id="cidade">
+                <option disabled selected value="0">Selecione</option>
+                <option value="1">João Monlevade</option>
+                <option value="2">Belo Horizonte</option>
+                <option value="3">Uberlândia</option>
+                <option value="4">Divinópolis</option>
+                <option value="5">Viçosa</option>
+              </select>
+            </div>
+
+            <div>
+              <input type="submit" class="btn btn-primary" value="Cadastrar">
+              <input type="reset" class="btn btn-secondary "value="Limpar">
+            </div>
+
+            <br>
+
+            <div class="jumbotron">
+              <a href="home.html">Home</a><br>
+              <a href="cadastros.html">Cadastros</a><br>
+              <a href="lancamentos.html">Lançamentos</a><br>
+              <a href="relatorios.html">Relatórios</a><br>
+              <a href="perfil.html">Perfil</a><br>
+              <a href="sair.html">Sair</a><br>
+            </div>
+            <br>
+          </form>
+        </body>
+        </html>
