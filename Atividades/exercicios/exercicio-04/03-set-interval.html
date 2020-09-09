@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <title>Contador - JS</title>
+</head>
+
+
+<body>
+
+  <script>
+    let cont = 1;
+    let id;
+    let execute = false;
+
+    function processo(){
+      document.getElementById("contador").innerHTML = Date();
+      contador ++;
+
+    }
+
+    function iniciar(){
+      if(!execute){
+        id = setInterval(processo);
+        execute = true;
+      }
+    }
+
+    function parar(){
+      clearInterval(id);
+      execute = false;
+    }
+
+    function reiniciar(){
+      parar();
+      contador = 1;
+      document.getElementById("contador").innerHTML="";
+    }
+
+  </script>
+
+
+
+
+  <div class="jumbotron">
+    <header>
+      <h1>Introdução JavaScript</h1>
+      <p>Contador</p>
+    </header>
+
+  </div>
+
+  <div id="contador"></div>
+
+  <input class="btn btn-primary" type="button" value="Iniciar" onclick="iniciar()">
+  <input class="btn btn-danger" type="button" value="Parar" onclick="parar()">
+  <input class="btn btn-warning" type="button" value="Reiniciar" onclick="reiniciar()">

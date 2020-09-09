@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <title>Recuperação de Dados com Formulario - JS</title>
+</head>
+
+
+<body>
+  <div class="jumbotron">
+    <header>
+      <h1>Introdução JavaScript</h1>
+      <p>Recuperação de dados com formulário</p>
+    </header>
+  </div>
+
+  <script>
+
+  function Pessoa(nome, sobrenome, telefone, idade, endereco){
+    this.nome = nome;
+    this.sobrenome = sobrenome;
+    this.telefone = telefone;
+    this.idade = idade;
+    this.endereco = endereco;
+  }
+
+
+  function carregaDados(){
+    const nome = window.prompt('Insira o nome: ');
+    const sobrenome = window.prompt('Insira o sobrenome: ');
+    const telefone = window.prompt('Insira o telefone: ');
+    const idade = window.prompt('Insir a a idade: ');
+    const endereco = window.prompt('Insira o endereço: ');
+
+    const pessoa = new Pessoa(nome, sobrenome, telefone, idade, endereco)
+
+    document.getElementById("nome", "sobrenome").innerHTML = "Nome: " + pessoa.nome + " " + pessoa.sobrenome
+    + "\nTelefone: " + pessoa.telefone + "\nIdade: " + pessoa.idade + "\nEndereço: " + pessoa.endereco;
+  }
+
+  function carregaDadosForm(){
+      const nome = document.frmDados.nome.value;
+      const sobrenome = document.frmDados.sobrenome.value;
+      const telefone = document.frmDados.telefone.value;
+      const idade = document.frmDados.idade.value;
+      const endereco = document.frmDados.endereco.value;
+
+      const pessoa2 = new Pessoa(nome, sobrenome, telefone, idade, endereco);
+      console.log(pessoa2);
+      window.alert('Carregado com sucesso!');
+      window.alert(`${nome} ${sobrenome} ${telefone} ${idade} ${endereco}`);
+  }
+
+
+  </script>
+  <div id="dados">
+    <div id="nome"></div>
+    <div id="sobrenome"></div>
+    <div id="telefone "></div>
+    <div id="idade"></div>
+    <div id="endereco"></div>
+  </div>
+
+  <br>
+
+  <legend>DADOS</legend>
+  <form action="post" name="frmDados">
+      <input type="text" name="nome">
+      <input type="text" name="sobrenome">
+      <input type="text" name="telefone">
+      <input type="text" name="idade">
+      <input type="text" name="endereco">
+  </form>
+
+  <br>
+
+  <div>
+    <input class="btn btn-primary" type="button" value="Carregar" onclick="carregaDados()">
+    <input class="btn btn-danger" type="button" value="Carregar Formulário" onclick="carregaDadosForm()">
+  </div>
+
+
+
+
+</body>
+</html>
