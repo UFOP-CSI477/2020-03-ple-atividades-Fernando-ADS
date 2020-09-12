@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cadastro de Clientes - WebPrint</title>
+  </head>
+  <body>
+    <h1>
+      <img src="./img/prot_logo.jpg" alt="webprint" width="140" height="85">
+      <br>
+      Clientes
+    </h1>
+
+    <form action="paginainicial.html" method="post">
+      <fieldset> <legend>DADOS DO CLIENTE</legend>
+
+      <br>
+
+      <label for="nome" id="labelNome">Nome:</label>
+      <input type="text" name="nome" id="nome" placeholder="nome" value="" >
+
+      <br><br>
+
+      <label for="rg" id="labelRG" >RG:</label>
+      <input type="text" name="rg" id="rg" placeholder="RG" value="">
+
+      <br><br>
+
+      <label for="cpf" id="labelCPF">CPF:</label>
+      <input type="number" name="cpf" id="cpf" placeholder="CPF" value="">
+
+      <br><br>
+
+      <label for="data" id="labelDataNasc">Data de Nascimento:</label>
+      <input type="date" name="data" id="data">
+
+      <br><br>
+
+      <label for="cnpj" id="labelCNPJ">CNPJ:</label>
+      <input type="number" name="cnpj" id="cnpj" placeholder="CNPJ" value="">
+
+      <br><br>
+
+      <label for="email" id="labelEmail">Email:</label>
+      <input type="email" name="email" id="email" placeholder="cliente@cliente.com" value="">
+
+      <br><br>
+
+      <label for="telefoneF" id="labelTelF">Telefone fixo:</label>
+      <input type="tel" name="telefoneF" placeholder="tel. fixo" value="">
+
+      <br><br>
+
+      <label for="telefoneC" id="labelTelC">Telefone celular:</label>
+      <input type="tel" name="telefoneC" placeholder="tel. celular" value="">
+
+      <br><br>
+
+      <label for="endereco" id="labelEndereco">Endereço</label>
+      <input type="text" name="endereco" id="endereco" placeholder="endereço" value="">
+
+      <br><br>
+
+      <label for="cidade">Cidade:</label>
+        <select name="cidade" id="cidade">
+          <option disabled selected value="0">Selecione</option>
+          <option value="1">João Monlevade</option>
+          <option value="2">Belo Horizonte</option>
+          <option value="3">Uberlândia</option>
+          <option value="4">Divinópolis</option>
+          <option value="5">Viçosa</option>
+        </select>
+
+      <br><br><br>
+
+      <input type="submit" value="Cadastrar">
+
+      </fieldset>
+      </form>
+
+  </body>
+</html>
