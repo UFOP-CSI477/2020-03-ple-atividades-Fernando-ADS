@@ -1,0 +1,42 @@
+<html lang="br" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <title>Recuperação de Dados com Formulario - JS</title>
+</head>
+<body>
+
+</body>
+<div class="jumbotron">
+  <header>
+    <h1>Carregamento de dados API</h1>
+    <p>Teste Breaking Bad</p>
+  </header>
+</div>
+
+  <div>
+    <form>
+      <input class="btn btn-primary" type="button" value="Carregar" onclick="carregaBreaking()">
+      <select name="breaking" id="breaking" onchange="carregaInfos()">
+        <option value="">Selecione: </option>
+      </select>
+
+      <select name="infos" id="infos">
+        <option value="">Selecione: </option>
+      </select>
+
+    </form>
+
+    <!--
+    <div class="spinner-border" role="status">
+      <span class="sr-only" display = inline>Loading...</span>
+    </div>
+    -->
+
+    <script src="apibreakingbad.js"></script>
+
+
+  </div>
+  </html>
