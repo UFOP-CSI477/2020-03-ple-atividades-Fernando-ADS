@@ -1,0 +1,32 @@
+*{
+  padding: 0;
+  margin:0;
+  outline:none;
+  font-weight: 600px;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  background-color: #87cefa;
+}
+
+input[type = button]{
+    width: 120px;
+    height: 60px;
+    margin: 5px;
+    font-size: 25pt;
+    border-radius: 30px;
+    background-color: #c8f4ff;
+
+}
+
+input[type = text]{
+  margin-top:50px;
+  width: 526px;
+  font-size: 25pt;
+  height: 80px;
+  border-radius: 30px;
+  font-style: oblique;
+
+}

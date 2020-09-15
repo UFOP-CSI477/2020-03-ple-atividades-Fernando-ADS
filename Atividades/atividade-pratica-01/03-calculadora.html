@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="./css/calc.css">
+
+  <title>Calculadora</title>
+
+  <script src = "./js/calc.js"></script>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <form name="calcs" method="post">
+      <div>
+        <input type="text" name="tela" value="" id="tela">
+      </div>
+
+      <div>
+        <input type="button" name="7" value="7" onclick="numbAndOp(value)">
+        <input type="button" name="8" value="8" onclick="numbAndOp(value)">
+        <input type="button" name="9" value="9" onclick="numbAndOp(value)">
+        <input type="button" name="/" value="/" onclick="numbAndOp(value)">
+      </div>
+
+      <div>
+        <input type="button" name="4" value="4" onclick="numbAndOp(value)">
+        <input type="button" name="5" value="5" onclick="numbAndOp(value)">
+        <input type="button" name="6" value="6" onclick="numbAndOp(value)">
+        <input type="button" name="*" value="*" onclick="numbAndOp(value)">
+      </div>
+
+      <div>
+        <input type="button" name="1" value="1" onclick="numbAndOp(value)">
+        <input type="button" name="2" value="2" onclick="numbAndOp(value)">
+        <input type="button" name="3" value="3" onclick="numbAndOp(value)">
+        <input type="button" name="-" value="-" onclick="numbAndOp(value)">
+      </div>
+
+
+      <div>
+        <input type="button" name="C" value="C" onclick="limpar()">
+        <input type="button" name="0" value="0" onclick="numbAndOp(value)">
+        <input type="button" name="=" value="=" onclick="calcular()">
+        <input type="button" name="+" value="+" onclick="numbAndOp(value)">
+      </div>
+
+    </form>
+  </div>
+
+
+
+
+
+</body>
+</html>

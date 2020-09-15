@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <title>Cálculo IMC</title>
+
+  <script src = "./js/imc.js"></script>
+
+</head>
+
+
+<body>
+  <div>
+    <img  align="right" width="12%" src="./img/health.png" alt="roll" style= "margin: 25px">
+  </div>
+
+  <div class="jumbotron jumbotron">
+    <header>
+      <h1>Cálculo IMC</h1>
+      <p>Vida Saudável</p>
+    </header>
+  </div>
+
+  <div class="container-fluid">
+    <h6>Informe o peso em kg e a altura em centímetros</h6>
+  </div>
+
+  <br>
+
+  <div class="container-fluid">
+    <form name="imcForm" method="post">
+      <div>
+        <label for="peso" id="labelPeso">Peso(kg):</label>
+        <input type="number" name="peso" id="peso" value="">
+
+        <label for="altura" id="labelAltura">Altura(Cm):</label>
+        <input type="number" name="altura" id="altura" value="">
+
+        <label for="imc" id="labelIMC">IMC:</label>
+        <input type="text" name="imc" id="imc" value="" disabled>
+
+        <label for="classificacao" id="labelClassificacao">Classificação:</label>
+        <input type="text" name="classificacao" id="classificacao" value="" disabled>
+
+        <br><br>
+
+        <label for="pesoIdeal" id="labelPesoIdeal">Intervalo de peso ideal:</label>
+        <input type="text" name="pesoIdeal" id="pesoIdeal" value="" disabled>
+
+      </div>
+
+      <br>
+      <div>
+        <input type="button" class="btn btn-primary" value="Calcular" onclick="calculaIMC()">
+        <input type="reset" class="btn btn-danger "value="Limpar" >
+      </div>
+    </form>
+  </div>
+
+  <br>
+
+  <div class="container-fluid" align="center">
+    <h6>Valores baseados na tabela a seguir:</h6>
+  </div>
+
+
+  <div class="container">
+    <div class="table-responsive container-fluid">
+      <table class="table table-bordered table-hover table-striped table-sm" style="text-align:center">
+        <thead>
+          <tr class="thead-dark">
+            <th>IMC</th>
+            <th>Classificação</th>
+          </tr>
+        </thead>
+
+        <tbody >
+          <tr>
+            <td>Abaixo de 18,5</td>
+            <td>Subnutrição</td>
+          </tr>
+
+          <tr>
+            <td>Entre 18,5 e 24,9</td>
+            <td>Peso Saudável</td>
+          </tr>
+
+          <tr>
+            <td>Entre 25,0 e 29,9</td>
+            <td>Sobrepeso</td>
+          </tr>
+
+          <tr>
+            <td>Entre 30,0 e 34,9</td>
+            <td>Obesidade grau 1</td>
+          </tr>
+
+          <tr>
+            <td>Entre 35,0 e 39,9</td>
+            <td>Obesidade grau 2</td>
+          </tr>
+
+          <tr>
+            <td>Acima de 40</td>
+            <td>Obesidade grau 3</td>
+          </tr>
+
+
+        </table>
+      </div>
+
+    </body>
+
+    </html>

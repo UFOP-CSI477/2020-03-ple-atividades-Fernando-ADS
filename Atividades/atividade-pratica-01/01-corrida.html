@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <title>Corrida de Rolimã</title>
+
+  <script src = "./js/corrida.js"></script>
+
+</head>
+
+
+<body>
+  <div class="jumbotron">
+    <header>
+      <div>
+        <img  align="right" width="8%" src="./img/rolima.png" alt="roll">
+      </div>
+
+      <h1>Corrida de Carrinhos de Rolimã</h1>
+      <p>Fast and Furious - 6 competidores</p>
+    </header>
+  </div>
+
+  <div class="container-fluid">
+    <h6>Informe os nomes dos competidores e seus respectivos tempos, em segundos:</h6>
+  </div>
+
+  <br>
+
+  <div class="table-responsive container-fluid">
+    <table class="table table-bordered table-hover table-striped" >
+      <thead>
+        <tr class="thead-light">
+          <th>Posição Largada</th>
+          <th>Competidor(a)</th>
+          <th>Tempo</th>
+          <th>Posição Final</th>
+          <th>Classificação</th>
+        </tr>
+        <tbody id="classFinal">
+
+        </tbody>
+      </thead>
+    </table>
+
+    <div class="container">
+
+      <form name:"corridaForm" method="post">
+        <div class="form-group">
+          <label for="posicaoLargada1" id="labelPosCompetidor1"></label>
+          <input type="number" name="posicaoLargada1" value="1" disabled style="width:30px">
+          <label for="nomecompetidor1" id="labelNomeCompetidor1">Competidor(a):</label>
+          <input type="text" name="nomeCompetidor1" id="nomeCompetidor1" value="" >
+          <label for="tempocompetidor1" id="labelTempoCompetidor1">Tempo:</label>
+          <input type="number" name="tempoCompetidor1" id="tempoCompetidor1" value="">
+        </div>
+
+        <div class="form-group">
+          <label for="posicaoLargada2" id="labelPosCompetidor2"></label>
+          <input type="number" name="posicaoLargada2" value="2" disabled style="width:30px">
+          <label for="nomecompetidor2" id="labelNomeCompetidor2">Competidor(a):</label>
+          <input type="text" name="nomeCompetidor2" id="nomeCompetidor2" value="" >
+          <label for="tempocompetidor2" id="labelTempoCompetidor2">Tempo:</label>
+          <input type="number" name="tempoCompetidor2" id="tempoCompetidor2" value="">
+        </div>
+
+        <div class="form-group">
+          <label for="posicaoLargada3" id="labelPosCompetidor3"></label>
+          <input type="number" name="posicaoLargada3" value="3" disabled style="width:30px">
+          <label for="nomecompetidor3" id="labelNomeCompetidor3">Competidor(a):</label>
+          <input type="text" name="nomeCompetidor3" id="nomeCompetidor3" value="" >
+          <label for="tempocompetidor3" id="labelTempoCompetidor3">Tempo:</label>
+          <input type="number" name="tempoCompetidor3" id="tempoCompetidor3" value="">
+        </div>
+
+        <div class="form-group">
+          <label for="posicaoLargada4" id="labelPosCompetidor4"></label>
+          <input type="number" name="posicaoLargada4" value="4" disabled style="width:30px">
+          <label for="nomecompetidor4" id="labelNomeCompetidor4">Competidor(a):</label>
+          <input type="text" name="nomeCompetidor4" id="nomeCompetidor4" value="" >
+          <label for="tempocompetidor4" id="labelTempoCompetidor4">Tempo:</label>
+          <input type="number" name="tempoCompetidor4" id="tempoCompetidor4" value="">
+        </div>
+
+        <div class="form-group">
+          <label for="posicaoLargada5" id="labelPosCompetidor5"></label>
+          <input type="number" name="posicaoLargada5" value="5" disabled style="width:30px">
+          <label for="nomecompetidor5" id="labelNomeCompetidor5">Competidor(a):</label>
+          <input type="text" name="nomeCompetidor5" id="nomeCompetidor5" value="" >
+          <label for="tempocompetidor5" id="labelTempoCompetidor5">Tempo:</label>
+          <input type="number" name="tempoCompetidor5" id="tempoCompetidor5" value="">
+        </div>
+
+        <div class="form-group">
+          <label for="posicaoLargada6" id="labelPosCompetidor6"></label>
+          <input type="number" name="posicaoLargada6" value="6" disabled style="width:30px">
+          <label for="nomecompetidor6" id="labelNomeCompetidor6">Competidor(a):</label>
+          <input type="text" name="nomeCompetidor6" id="nomeCompetidor6" value="" >
+          <label for="tempocompetidor6" id="labelTempoCompetidor6">Tempo:</label>
+          <input type="number" name="tempoCompetidor6" id="tempoCompetidor6" value="">
+        </div>
+
+        <div>
+          <input type="button" class="btn btn-primary" value="Calcular" onclick="calculaVencedor.js">
+          <input type="reset" class="btn btn-danger "value="Limpar">
+        </div>
+
+      </form>
+
+
+    </div>
+    <br>
+
+
+  </div>
+
+
+</body>
+</html>

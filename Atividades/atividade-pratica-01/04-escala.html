@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="br" dir="ltr">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <title>Escala Richter</title>
+
+  <script src = "./js/rich.js"></script>
+
+</head>
+<body>
+  <div>
+    <img  align="right" width="15%" src="./img/terremotos.png" alt="roll" style= "margin: 25px">
+  </div>
+
+
+  <div class="jumbotron">
+    <header>
+      <h1>Escala Richter</h1>
+      <p>Intensidade de Terremotos</p>
+    </header>
+  </div>
+
+  <div class="container-fluid">
+    <h6>Informe o tempo em segundos e a amplitude em milímetros</h6>
+    <br>
+  </div>
+
+  <div class="container-fluid">
+
+    <form name="richForm" method="post">
+      <div>
+        <label for="amplitude" id="labelAmplitude">Amplitude(mm):</label>
+        <input type="number" name="amplitude" id="amplitude" value="">
+
+        <label for="tempo" id="labelTempo">Intervalo de tempo entre as ondas(s):</label>
+        <input type="number" name="tempo" id="tempo" value="">
+
+        <br><br>
+
+        <label for="magnitude" id="labelMagnitude">Magnitude do terremoto:</label>
+        <input type="text" name="magnitude" id="magnitude" value="" disabled>
+
+        <br><br>
+        <label for="efeitos" id="labelEfeitos">Efeitos:</label>
+        <input type="efeitos" name="efeitos" id="efeitos" style="width:500px" value="" disabled >
+      </div>
+
+      <br>
+      <div>
+
+        <input type="button" class="btn btn-primary" value="Calcular" onclick="calculaEscala()">
+        <input type="reset" class="btn btn-danger "value="Limpar" >
+      </div>
+    </form>
+
+    <br>
+
+  </div>
+  <div class="container">
+    <div class="table-responsive container-fluid">
+      <table class="table table-bordered table-hover table-striped table-sm table-warning" style="text-align:center">
+        <thead>
+          <tr class="thead-dark">
+            <th>Magnitude Richter</th>
+            <th>Efeitos</th>
+          </tr>
+        </thead>
+
+        <tbody >
+          <tr>
+            <td>Menor que 3,5</td>
+            <td>Geralmente não sentido, mas gravado</td>
+          </tr>
+
+          <tr>
+            <td>Entre 3,5 e 5,4</td>
+            <td>Às vezes sentido, mas raramente causa dano</td>
+          </tr>
+
+          <tr>
+            <td>Entre 5,5 e 6,0</td>
+            <td>Pequenos danos a prédios bem construídos, mas pode danificar seriamente casas mal construídas</td>
+          </tr>
+
+          <tr>
+            <td>Entre 6,1 e 6,9</td>
+            <td>Destrutivo em áreas em torno de 100km do epicentro</td>
+          </tr>
+
+          <tr>
+            <td>Entre 7,0 e 7,9</td>
+            <td>Grande terremoto, sérios danos em uma grande faixa</td>
+          </tr>
+
+          <tr>
+            <td>Igual ou maior que 8</td>
+            <td>Enorme terremoto, graves danos em áreas a centenas de quilômetros</td>
+          </tr>
+
+
+        </table>
+      </div>
+    </body>
+    </html>
