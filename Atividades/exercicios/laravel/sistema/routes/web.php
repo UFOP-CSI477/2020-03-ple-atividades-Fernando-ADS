@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Produto;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,24 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/ola',function(){
+  return 'Olá mundo';
+});
+
+Route::get('/produtos/todos', function(){
+  $produtos = Produto::all();
+  return view('lista', [ 'dados' => $produtos]);
+
+});
+
+
+Route::get('/produtos/{id}', function($id){
+
+  $produto = Produto::findOrFail($id);
+  if($produto == null){
+    return 'ID Inválido';
+  }
+  return view('lista', [ 'dados' => $produto]);
 });
