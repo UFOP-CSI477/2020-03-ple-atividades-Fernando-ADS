@@ -23,8 +23,17 @@
       <li class="nav-item">
         <a class="nav-link" href="{{route('produtos.index')}}">Produtos</a>
       </li>
+      
     </ul>
   </nav>
+
+  @if(session('mensagem'))
+    <div class="alert alert-success">
+        {{session('mensagem')}}
+    </div>
+
+  @endif
+
 
   @yield('conteudo')
 
