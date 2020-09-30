@@ -2,8 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Produto;
+use App\Models\Estado;
 use App\Http\Controllers\ProdutoController;
-
+use App\Http\Controllers\EstadoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ Route::get('/', function () {
 
 Route::resource('/produtos', ProdutoController::class);
 
+Route::resource('/estados', EstadoController::class);
 
 /*
 Route::get('/ola',function(){
@@ -43,4 +45,10 @@ Route::get('/produtos/{id}', function($id){
   }
   return view('lista', [ 'dados' => $produto]);
 });
+*/
+
+/*
+<!--
+Fernando Aparecido da Silva - 1518291
+-->
 */
