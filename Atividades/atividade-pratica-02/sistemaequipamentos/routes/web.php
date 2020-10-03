@@ -1,9 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\EquipamentoController;
-use App\Http\Controllers\RegistroController;
-use App\Http\Controllers\UserController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,13 +14,5 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('principal');
-})->name('principal');
-
-Route::resource('/users', UserController::class);
-Route::resource('/equipamentos', EquipamentoController::class)->middleware('auth');
-Route::resource('/registros', RegistroController::class);
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    return view('welcome');
+});
