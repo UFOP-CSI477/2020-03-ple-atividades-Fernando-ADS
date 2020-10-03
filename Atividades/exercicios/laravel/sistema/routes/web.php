@@ -5,7 +5,7 @@ use App\Models\Produto;
 use App\Models\Estado;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\EstadoController;
-
+use App\Http\Controllers\CidadeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +25,7 @@ Route::resource('/produtos', ProdutoController::class);
 
 Route::resource('/estados', EstadoController::class);
 
+Route::resource('/cidades', CidadeController::class);
 /*
 Route::get('/ola',function(){
   return 'Olá mundo';

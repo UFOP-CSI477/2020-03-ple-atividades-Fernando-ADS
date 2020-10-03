@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cidade;
+
 use App\Models\Estado;
 use Illuminate\Http\Request;
 
-class EstadoController extends Controller
+class CidadeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,8 @@ class EstadoController extends Controller
      */
     public function index()
     {
-      $estados = Estado::orderBy('id')->get();
-      return view('estados.index', ['estados' => $estados]);
+      $cidades = Cidade::orderBy('id')->get();
+      return view('cidades.index', ['cidades' => $cidades]);
     }
 
     /**
@@ -25,7 +27,9 @@ class EstadoController extends Controller
      */
     public function create()
     {
-        return view('estados.create');
+        $estados = Estado::orderBy('nome')->get();
+
+        return view('cidades.create', ['estados' => $estados]);
     }
 
     /**
@@ -36,68 +40,62 @@ class EstadoController extends Controller
      */
     public function store(Request $request)
     {
-      Estado::create($request->all());
+      Cidade::create($request->all());
       session()->flash('mensagem', 'Cadastrado com sucesso!');
-      return redirect()->route('estados.index');
+      return redirect()->route('cidades.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\Cidade  $cidade
      * @return \Illuminate\Http\Response
      */
-    public function show(Estado $estado)
+    public function show(Cidade $cidade)
     {
-      return view('estados.show', ['estado' => $estado]);
+            return view('cidades.show', ['cidade' => $cidade]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\Cidade  $cidade
      * @return \Illuminate\Http\Response
      */
-    public function edit(Estado $estado)
+    public function edit(Cidade $cidade)
     {
-        return view('estados.edit', ['estado' => $estado]);
+
+          $estados = Estado::orderBy('nome')->get();
+
+      return view('cidades.edit', ['cidade' => $cidade, 'estados'=>$estados]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\Cidade  $cidade
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Estado $estado)
+    public function update(Request $request, Cidade $cidade)
     {
-      $estado->fill($request->all());
-      $estado->save();
+      $cidade->fill($request->all());
+      $cidade->save();
 
       session()->flash('mensagem', 'Atualizado com sucesso!');
-      return redirect()->route('estados.index');
+      return redirect()->route('cidades.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\Cidade  $cidade
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Estado $estado)
+    public function destroy(Cidade $cidade)
     {
-      if($estado->cidades->count()>0){
-        session()->flash('mensagem', 'Não é permitido excluir! Existem associacões!');
-      }
-
-      else {
-        $estado->delete();
-        session()->flash('mensagem', 'Excluído com sucesso!');
-      }
-      return redirect()->route('estados.index');
+      $cidade->delete();
+      session()->flash('mensagem', 'Excluído com sucesso!');
+      return redirect()->route('cidades.index');
     }
 }
-/**
-*Fernando Aparecido da Silva - 1518291
-*/

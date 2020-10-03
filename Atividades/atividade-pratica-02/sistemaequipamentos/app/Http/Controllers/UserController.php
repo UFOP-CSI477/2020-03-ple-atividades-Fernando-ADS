@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Estado;
+use App\Models\User;
+use App\Models\Equipamento;
+use App\Models\Registro;
 use Illuminate\Http\Request;
 
-class EstadoController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +16,8 @@ class EstadoController extends Controller
      */
     public function index()
     {
-      $estados = Estado::orderBy('id')->get();
-      return view('estados.index', ['estados' => $estados]);
+      $users = User::orderBy('id')->get();
+      return view('users.index', ['users' => $users]);//
     }
 
     /**
@@ -25,7 +27,7 @@ class EstadoController extends Controller
      */
     public function create()
     {
-        return view('estados.create');
+        return view('users.create');
     }
 
     /**
@@ -36,68 +38,65 @@ class EstadoController extends Controller
      */
     public function store(Request $request)
     {
-      Estado::create($request->all());
+      User::create($request->all());
       session()->flash('mensagem', 'Cadastrado com sucesso!');
-      return redirect()->route('estados.index');
+      return redirect()->route('users.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(Estado $estado)
+    public function show(User $user)
     {
-      return view('estados.show', ['estado' => $estado]);
+            return view('users.show', ['user' => $user]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(Estado $estado)
+    public function edit(User $user)
     {
-        return view('estados.edit', ['estado' => $estado]);
+        return view('users.edit', ['user' => $user]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Estado $estado)
+    public function update(Request $request, User $user)
     {
-      $estado->fill($request->all());
-      $estado->save();
+      $user->fill($request->all());
+      $user->save();
 
       session()->flash('mensagem', 'Atualizado com sucesso!');
-      return redirect()->route('estados.index');
+      return redirect()->route('users.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Estado $estado)
+    public function destroy(User $user)
     {
-      if($estado->cidades->count()>0){
-        session()->flash('mensagem', 'Não é permitido excluir! Existem associacões!');
+      if($user->registros->count()>0){
+        session()->flash('mensagem', 'Não é permitido excluir! Existem associações!');
       }
 
       else {
-        $estado->delete();
+        $user->delete();
         session()->flash('mensagem', 'Excluído com sucesso!');
       }
-      return redirect()->route('estados.index');
+      return redirect()->route('users.index');
     }
 }
-/**
-*Fernando Aparecido da Silva - 1518291
-*/

@@ -28,6 +28,10 @@
         <a class="nav-link" href="{{route('estados.index')}}">Estados</a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('cidades.index')}}">Cidades</a>
+      </li>
+
     </ul>
   </nav>
 

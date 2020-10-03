@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Estado;
+use App\Models\User;
+use App\Models\Equipamento;
+use App\Models\Registro;
+
 use Illuminate\Http\Request;
 
-class EstadoController extends Controller
+class EquipamentoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +17,8 @@ class EstadoController extends Controller
      */
     public function index()
     {
-      $estados = Estado::orderBy('id')->get();
-      return view('estados.index', ['estados' => $estados]);
+      $equipamentos = Equipamento::orderBy('nome')->get();
+      return view('equipamentos.index', ['equipamentos' => $equipamentos]);
     }
 
     /**
@@ -25,7 +28,8 @@ class EstadoController extends Controller
      */
     public function create()
     {
-        return view('estados.create');
+      return view('equipamentos.create');
+
     }
 
     /**
@@ -36,68 +40,65 @@ class EstadoController extends Controller
      */
     public function store(Request $request)
     {
-      Estado::create($request->all());
+      Equipamento::create($request->all());
       session()->flash('mensagem', 'Cadastrado com sucesso!');
-      return redirect()->route('estados.index');
+      return redirect()->route('equipamentos.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\Equipamento  $equipamento
      * @return \Illuminate\Http\Response
      */
-    public function show(Estado $estado)
+    public function show(Equipamento $equipamento)
     {
-      return view('estados.show', ['estado' => $estado]);
+        return view('equipamentos.show', ['equipamento' => $equipamento]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\Equipamento  $equipamento
      * @return \Illuminate\Http\Response
      */
-    public function edit(Estado $estado)
+    public function edit(Equipamento $equipamento)
     {
-        return view('estados.edit', ['estado' => $estado]);
+      return view('equipamentos.edit', ['equipamento' => $equipamento]);  //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\Equipamento  $equipamento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Estado $estado)
+    public function update(Request $request, Equipamento $equipamento)
     {
-      $estado->fill($request->all());
-      $estado->save();
+      $equipamento->fill($request->all());
+      $equipamento->save();
 
       session()->flash('mensagem', 'Atualizado com sucesso!');
-      return redirect()->route('estados.index');
+      return redirect()->route('equipamentos.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\Equipamento  $equipamento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Estado $estado)
+    public function destroy(Equipamento $equipamento)
     {
-      if($estado->cidades->count()>0){
+      if($equipamento->registros->count()>0){
         session()->flash('mensagem', 'Não é permitido excluir! Existem associacões!');
       }
 
       else {
-        $estado->delete();
+        $equipamento->delete();
         session()->flash('mensagem', 'Excluído com sucesso!');
       }
-      return redirect()->route('estados.index');
+      return redirect()->route('equipamentos.index');
     }
-}
-/**
-*Fernando Aparecido da Silva - 1518291
-*/
+    }
