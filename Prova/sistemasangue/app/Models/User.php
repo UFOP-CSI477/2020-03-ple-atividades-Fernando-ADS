@@ -20,7 +20,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'tipo',
     ];
+
+
+        // 1 pessoa tem muitos agendamentos
+        public function agendamentos(){
+          return $this->hasMany(Agendamento::class);
+        }
 
     /**
      * The attributes that should be hidden for arrays.
@@ -40,4 +47,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
 }
