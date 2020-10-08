@@ -15,6 +15,15 @@ class CreateFuncionariosTable extends Migration
     {
         Schema::create('funcionarios', function (Blueprint $table) {
             $table->id();
+            $table->string('cnpj',11);
+            $table->string('nome',80);
+            $table->bigInteger('tipo');
+            $table->string('telefone',80);
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->string('endereco',80);
+            $table->rememberToken();
             $table->timestamps();
         });
     }

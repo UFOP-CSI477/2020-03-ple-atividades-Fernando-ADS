@@ -15,7 +15,14 @@ class CreateMaquinasTable extends Migration
     {
         Schema::create('maquinas', function (Blueprint $table) {
             $table->id();
+            $table->string('nome',80);
+            $table->string('marca',80);
+            $table->unsignedBigInteger('fornecedor_id');
+            $table->float('valor');
             $table->timestamps();
+
+            $table->foreign('fornecedor_id')->references('id')->on('fornecedors');
+
         });
     }
 

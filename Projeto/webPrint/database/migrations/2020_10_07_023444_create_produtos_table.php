@@ -15,7 +15,12 @@ class CreateProdutosTable extends Migration
     {
         Schema::create('produtos', function (Blueprint $table) {
             $table->id();
+            $table->string('nome',80);
+            $table->float('valor');
+            $table->unsignedBigInteger('fornecedor_id');
             $table->timestamps();
+
+            $table->foreign('fornecedor_id')->references('id')->on('fornecedors');
         });
     }
 

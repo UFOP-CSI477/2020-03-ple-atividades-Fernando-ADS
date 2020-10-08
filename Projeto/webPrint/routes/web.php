@@ -14,5 +14,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('principal');
+})->name('principal');
+
+
+Route::resource('/funcionarios', FuncionarioController::class);
+Route::resource('/fornecedors', FornecedorController::class);
+Route::resource('/clientes', ClienteController::class);
+Route::resource('/produtos', ProdutoController::class);
+Route::resource('/vendas', VendaController::class);
+Route::resource('/orcamentos', OrcamentoController::class);
+Route::resource('/maquinas', MaquinaController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
