@@ -22,7 +22,7 @@ class VendaFactory extends Factory
     public function definition()
     {
         return [
-            //
+        
         ];
     }
 }

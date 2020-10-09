@@ -22,7 +22,6 @@ class MaquinaFactory extends Factory
     public function definition()
     {
         return [
-            //
         ];
     }
 }
