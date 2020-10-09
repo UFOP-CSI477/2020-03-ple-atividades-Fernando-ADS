@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
+use App\Models\Funcionario;
+use App\Models\Produto;
 use App\Models\Venda;
 use Illuminate\Http\Request;
 
@@ -14,7 +17,9 @@ class VendaController extends Controller
      */
     public function index()
     {
-        //
+      $vendas = Venda::orderBy('nome')->get();
+      return view('vendas.index', ['vendas' => $vendas]);
+
     }
 
     /**
@@ -24,7 +29,12 @@ class VendaController extends Controller
      */
     public function create()
     {
-        //
+      $clientes = Cliente::get();
+      $funcionarios = Funcionario::get();
+      $produtos = Produto::get();
+      $vendas = Venda::get();
+      return view('vendas.create', ['clientes'=>$clientes, 'funcionarios'=> $funcionarios, 'produtos'=>$produtos]);
+
     }
 
     /**
@@ -35,7 +45,10 @@ class VendaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Venda::create($request->all());
+      session()->flash('mensagem', 'Cadastrado com sucesso!');
+      return redirect()->route('vendas.index');
+
     }
 
     /**
@@ -46,7 +59,8 @@ class VendaController extends Controller
      */
     public function show(Venda $venda)
     {
-        //
+      return view('vendas.show', ['venda' => $venda]);
+
     }
 
     /**
@@ -57,7 +71,12 @@ class VendaController extends Controller
      */
     public function edit(Venda $venda)
     {
-        //
+      $clientes = Cliente::get();
+      $funcionarios = Funcionario::get();
+      $produtos = Produto::get();
+      $vendas = Venda::get();
+      return view('vendas.edit', ['clientes'=>$clientes, 'funcionarios'=> $funcionarios, 'produtos'=>$produtos, 'vendas'=>$vendas]);
+
     }
 
     /**
@@ -69,7 +88,12 @@ class VendaController extends Controller
      */
     public function update(Request $request, Venda $venda)
     {
-        //
+      $venda->fill($request->all());
+      $venda->save();
+
+      session()->flash('mensagem', 'Atualizado com sucesso!');
+      return redirect()->route('vendas.index');
+
     }
 
     /**
@@ -80,6 +104,8 @@ class VendaController extends Controller
      */
     public function destroy(Venda $venda)
     {
-        //
+      $venda->delete();
+      session()->flash('mensagem', 'Excluído com sucesso!');
+      return redirect()->route('vendas.index');
     }
 }

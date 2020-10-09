@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Fornecedor;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        //
+      $produtos = Produto::orderBy('nome')->get();
+      return view('produtos.index', ['produtos' => $produtos]);
+
     }
 
     /**
@@ -24,7 +27,10 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        //
+      $fornecedors = Fornecedor::get();
+      $produtos = Produto::get();
+      return view('produtos.create', ['fornecedors'=>$fornecedors, 'produtos'=> $produtos]);
+
     }
 
     /**
@@ -35,7 +41,10 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      Produto::create($request->all());
+      session()->flash('mensagem', 'Cadastrado com sucesso!');
+      return redirect()->route('produtos.index');
+
     }
 
     /**
@@ -46,7 +55,8 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produto)
     {
-        //
+      return view('produtos.show', ['produto' => $produto]);
+
     }
 
     /**
@@ -57,7 +67,9 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        //
+      $fornecedors = Fornecedor::get();
+      return view('produtos.edit', ['fornecedors' => $fornecedors, 'produtos' => $produtos]);
+
     }
 
     /**
@@ -69,7 +81,12 @@ class ProdutoController extends Controller
      */
     public function update(Request $request, Produto $produto)
     {
-        //
+      $produto->fill($request->all());
+      $produto->save();
+
+      session()->flash('mensagem', 'Atualizado com sucesso!');
+      return redirect()->route('produtos.index');
+
     }
 
     /**
@@ -80,6 +97,8 @@ class ProdutoController extends Controller
      */
     public function destroy(Produto $produto)
     {
-        //
+      $produto->delete();
+      session()->flash('mensagem', 'Excluído com sucesso!');
+      return redirect()->route('produtos.index');
     }
 }
