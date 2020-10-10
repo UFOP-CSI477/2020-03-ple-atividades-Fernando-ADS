@@ -8,12 +8,13 @@
       <br>
       <thead class="table-info" >
         <tr>
-          <th>Data</th>
-          <th>Local da Coleta</th>
-          <th>Cidade da Coleta</th>
-          <th>ID Pessoa</th>
-          <th>Nome da Pessoa</th>
-          <th>Tipo Sanguíneo</th>
+          <th>ID</th>
+          <th>Status</th>
+          <th>Cliente</th>
+          <th>Funcionario</th>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Valor Total</th>
 
         </tr>
       </thead>
@@ -21,13 +22,13 @@
 
       <tbody class="table-light table-sm">
         <tr>
-          <td>{{$agendamento->data}}</td>
-
-          <td>{{$agendamento->coleta->nome}}</td>
-          <td>{{$agendamento->coleta->cidade}}</td>
-          <td>{{$agendamento->user->id}}</td>
-          <td>{{$agendamento->user->name}}</td>
-          <td>{{$agendamento->user->tipo}}</td>
+          <td>{{$orcamento->id}}</td>
+          <td>{{$orcamento->status}}</td>
+          <td>{{$orcamento->cliente->nome}}</td>
+          <td>{{$orcamento->funcionario->nome}}</td>
+          <td>{{$orcamento->produto->nome}}</td>
+          <td>{{$orcamento->quantidade}}</td>
+          <td>{{$orcamento->valortotal}}</td>
         </tr>
 
       </tbody>
@@ -36,16 +37,16 @@
   </div>
 
   <div class="container-fluid">
-    <a href="{{route('agendamentos.edit', $agendamento->id)}}">Editar</a>
+    <a href="{{route('orcamentos.edit', $orcamento->id)}}">Editar</a>
   </div>
   <div class="container-fluid">
-    <a href="{{route('agendamentos.index')}}">Voltar</a>
+    <a href="{{route('orcamentos.index')}}">Voltar</a>
   </div>
 
 
   <div>
     <form  name="frmDelete"
-    action="{{route('agendamentos.destroy', $agendamento->id)}}" method="post" onsubmit="return confirm('Deseja exlcuir?')">
+    action="{{route('orcamentos.destroy', $orcamento->id)}}" method="post" onsubmit="return confirm('Deseja exlcuir?')">
 
     @csrf
     @method('DELETE')

@@ -6,28 +6,27 @@
   <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped" style="text-align:center">
       <br>
-      <thead class="table-info" >
+      <thead class="table-danger">
         <tr>
-          <th>Data</th>
-          <th>Local da Coleta</th>
-          <th>Cidade da Coleta</th>
-          <th>ID Pessoa</th>
-          <th>Nome da Pessoa</th>
-          <th>Tipo Sanguíneo</th>
-
+          <th>CPF</th>
+          <th>Nome</th>
+          <th>Tipo</th>
+          <th>Telefone</th>
+          <th>Email</th>
+          <th>Endereço</th>
         </tr>
       </thead>
 
 
       <tbody class="table-light table-sm">
         <tr>
-          <td>{{$agendamento->data}}</td>
+          <td>{{$funcionario->cnpj}}</td>
+          <td>{{$funcionario->nome}}</td>
+          <td>{{$funcionario->tipo}}</td>
+          <td>{{$funcionario->telefone}}</td>
+          <td>{{$funcionario->email}}</td>
+          <td>{{$funcionario->endereco}}</td>
 
-          <td>{{$agendamento->coleta->nome}}</td>
-          <td>{{$agendamento->coleta->cidade}}</td>
-          <td>{{$agendamento->user->id}}</td>
-          <td>{{$agendamento->user->name}}</td>
-          <td>{{$agendamento->user->tipo}}</td>
         </tr>
 
       </tbody>
@@ -35,17 +34,17 @@
     </table>
   </div>
 
-  <div class="container-fluid">
-    <a href="{{route('agendamentos.edit', $agendamento->id)}}">Editar</a>
-  </div>
-  <div class="container-fluid">
-    <a href="{{route('agendamentos.index')}}">Voltar</a>
-  </div>
+<div class="container-fluid">
+  <a href="{{route('funcionarios.edit', $funcionario->id)}}">Editar</a>
+</div>
+<div class="container-fluid">
+  <a href="{{route('funcionarios.index')}}">Voltar</a>
+</div>
 
 
-  <div>
-    <form  name="frmDelete"
-    action="{{route('agendamentos.destroy', $agendamento->id)}}" method="post" onsubmit="return confirm('Deseja exlcuir?')">
+<div>
+  <form  name="frmDelete"
+  action="{{route('funcionarios.destroy', $funcionario->id)}}" method="post" onsubmit="return confirm('Deseja exlcuir?')">
 
     @csrf
     @method('DELETE')

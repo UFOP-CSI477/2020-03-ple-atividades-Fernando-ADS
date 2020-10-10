@@ -2,39 +2,58 @@
 
 @section('conteudo')
 <div class="container-fluid">
-  <form class="container-fluid " action="{{route('agendamentos.update', $agendamento->id)}}" method="post">
+  <form class="container-fluid " action="{{route('orcamentos.update', $orcamento->id)}}" method="post">
 
     @csrf
     @method('PUT')
 
     <div class="form-group">
-      <label for="userId" id="labelUserID">Usuário:</label>
-      <select name="user_id" id="user_id" class="form-control">
-        <option value="{{$agendamento->user->id}}">{{$agendamento->user->name}}</option>
-        @foreach($users as $user)
-        <option value="{{$user->id}}">{{$user->name}}</option>
+      <label for="status" id="labelStatus">Status:</label>
+      <input type="text" name="status" id="status" value="{{$orcamento->status}}" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="cliente_id" id="labelcliente_id">Cliente:</label>
+      <select name="cliente_id" id="cliente_id" class="form-control">
+        <option value="{{$orcamento->cliente->id}}">{{$orcamento->cliente->nome}}</option>
+        @foreach($clientes as $cliente)
+        <option value="{{$cliente->id}}">{{$cliente->nome}}</option>
         @endforeach
       </select>
     </div>
 
-    
-    <div class="form-group">
-      <label for="coletaId" id="labeLColetaID">Coleta:</label>
-      <select name="coleta_id" id="coleta_id" class="form-control">
-        @foreach($coletas as $e)
-        <option value="{{$e->id}}"
-          @if($agendamento->coleta_id == $e->id)
-          selected
-          @endif
-          >{{$e->nome}}</option>
-          @endforeach
-        </select>
-      </div>
 
-      <div class="form-group">
-        <label for="data" id="labelData">Data:</label>
-        <input type="date" name="data" id="data" value="{{$agendamento->data}}" class="form-control">
-      </div>
+    <div class="form-group">
+      <label for="funcionario_id" id="labelfuncionario_id">Funcionario:</label>
+      <select name="funcionario_id" id="funcionario_id" class="form-control">
+        <option value="{{$orcamento->funcionario->id}}">{{$orcamento->funcionario->nome}}</option>
+        @foreach($funcionarios as $funcionario)
+        <option value="{{$funcionario->id}}">{{$funcionario->nome}}</option>
+        @endforeach
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="produto_id" id="labelproduto_id">Produto:</label>
+      <select name="produto_id" id="produto_id" class="form-control">
+        <option value="{{$orcamento->produto->id}}">{{$orcamento->produto->nome}}</option>
+        @foreach($produtos as $produto)
+        <option value="{{$produto->id}}">{{$produto->nome}}</option>
+        @endforeach
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="quantidade" id="labelQuantidade">Quantidade:</label>
+      <input type="number" name="quantidade" id="quantidade" value="{{$orcamento->quantidade}}" class="form-control">
+    </div>
+
+
+    <div class="form-group">
+      <label for="valortotal" id="labelValorTotal">Valor Total:</label>
+      <input type="float" name="valortotal" id="valortotal" value="{{$orcamento->valortotal}}" class="form-control">
+    </div>
 
 
       <div>

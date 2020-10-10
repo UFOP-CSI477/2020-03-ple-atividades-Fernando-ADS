@@ -2,49 +2,58 @@
 
 @section('conteudo')
 <div class="container-fluid">
-  <form class="container-fluid " action="{{route('agendamentos.update', $agendamento->id)}}" method="post">
+  <form class="container-fluid " action="{{route('funcionarios.update', $funcionario->id)}}" method="post">
 
     @csrf
     @method('PUT')
 
     <div class="form-group">
-      <label for="userId" id="labelUserID">Usuário:</label>
-      <select name="user_id" id="user_id" class="form-control">
-        <option value="{{$agendamento->user->id}}">{{$agendamento->user->name}}</option>
-        @foreach($users as $user)
-        <option value="{{$user->id}}">{{$user->name}}</option>
-        @endforeach
-      </select>
+      <label for="cnpj" id="labelCnpj">CPF:</label>
+      <input type="text" name="cnpj" id="cnpj" value="{{$funcionarios->cnpj}}" class="form-control">
     </div>
 
-    
     <div class="form-group">
-      <label for="coletaId" id="labeLColetaID">Coleta:</label>
-      <select name="coleta_id" id="coleta_id" class="form-control">
-        @foreach($coletas as $e)
-        <option value="{{$e->id}}"
-          @if($agendamento->coleta_id == $e->id)
-          selected
-          @endif
-          >{{$e->nome}}</option>
-          @endforeach
-        </select>
-      </div>
+      <label for="nome" id="labelNome">Nome:</label>
+      <input type="text" name="nome" id="nome" value="{{$funcionarios->cnpj}}" class="form-control">
+    </div>
 
-      <div class="form-group">
-        <label for="data" id="labelData">Data:</label>
-        <input type="date" name="data" id="data" value="{{$agendamento->data}}" class="form-control">
-      </div>
+    <div class="form-group">
+      <label for="tipo" id="labelTipo">Tipo:</label>
+      <input type="number"  min="1" max="4" name="tipo" id="tipo" disabled value="{{$funcionarios->cnpj}}" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="telefone" id="labelTelefone">Telefone:</label>
+      <input type="text" name="telefone" id="telefone" value="{{$funcionarios->cnpj}}" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="email" id="labelEmail">Email:</label>
+      <input type="text" name="email" id="email" value="{{$funcionarios->cnpj}}" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="senha" id="labelSenha">Senha:</label>
+      <input type="password" name="senha" id="senha" value="{{$funcionarios->cnpj}}" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="endereco" id="labelEndereco">Endereço:</label>
+      <input type="text" name="endereco" id="endereco" value="{{$funcionarios->cnpj}}" class="form-control">
+    </div>
 
 
-      <div>
-        <input type="submit" class="btn btn-primary" value="Atualizar">
-        <input type="reset" class="btn btn-info "value="Limpar" >
-      </div>
-    </form>
-  </div>
 
-  @endsection
-  <!--
-  Fernando Aparecido da Silva - 1518291
+    <br>
+
+    <div>
+      <input type="submit" class="btn btn-primary" value="Atualizar">
+      <input type="reset" class="btn btn-info "value="Limpar" >
+    </div>
+  </form>
+</div>
+
+@endsection
+<!--
+Fernando Aparecido da Silva - 1518291
 -->

@@ -7,12 +7,14 @@
       <br>
       <thead class="table-info">
         <tr>
-          <th>Data</th>
-          <th>Local da Coleta</th>
-          <th>Cidade da Coleta</th>
-          <th>ID Pessoa</th>
-          <th>Nome da Pessoa</th>
-          <th>Tipo Sanguíneo</th>
+          <th>ID</th>
+          <th>Status</th>
+          <th>Cliente</th>
+          <th>Funcionario</th>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Valor Total</th>
+          <th>Data de Entrega</th>
 
        <th>Exibir</th>
         </tr>
@@ -21,17 +23,19 @@
 
       <tbody class="table-light table-sm">
 
-        @foreach($agendamentos as $e)
+        @foreach($vendas as $e)
         <tr>
-          <td>{{$e->data}}</td>
-          <td>{{$e->coleta->nome}}</td>
-          <td>{{$e->coleta->cidade}}</td>
-          <td>{{$e->user->id}}</td>
-          <td>{{$e->user->name}}</td>
-          <td>{{$e->user->tipo}}</td>
+          <td>{{$e->id}}</td>
+          <td>{{$e->status}}</td>
+          <td>{{$e->cliente->nome}}</td>
+          <td>{{$e->funcionario->nome}}</td>
+          <td>{{$e->produto->nome}}</td>
+          <td>{{$e->quantidade}}</td>
+          <td>{{$e->valortotal}}</td>
+          <td>{{$e->dataentrega}}</td>
 
           <td>
-            <a href="{{route('agendamentos.show', $e->id)}}">
+            <a href="{{route('vendas.show', $e->id)}}">
               <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
                 <path fill-rule="evenodd" d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
@@ -46,7 +50,7 @@
     </table>
 
       <div class="container-fluid">
-        <a href="{{route('agendamentos.create')}}">Inserir</a>
+        <a href="{{route('vendas.create')}}">Inserir</a>
       </div>
 
   </div>

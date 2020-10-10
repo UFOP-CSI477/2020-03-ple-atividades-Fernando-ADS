@@ -2,46 +2,43 @@
 
 @section('conteudo')
 <div class="container-fluid">
-  <form class="container-fluid " action="{{route('agendamentos.store')}}" method="post">
+  <form class="container-fluid " action="{{route('fornecedors.store')}}" method="post">
 
     @csrf
 
     <div class="form-group">
-      <label for="user_id" id="labelUser_id">Pessoa:</label>
-      <select name="user_id" id="user_id" class="form-control">
-        <option disabled selected value="0">Selecione</option>
-        @foreach($users as $u)
-        <option value="{{$u->id}}">{{$u->name}}</option>
-        @endforeach
-      </select>
+      <label for="cnpj" id="labelCnpj">CPF/CNPJ:</label>
+      <input type="text" name="cnpj" id="cnpj" value="" class="form-control">
     </div>
 
     <div class="form-group">
-      <label for="coleta_id" id="labelcoleta_id">Local da Coleta:</label>
-      <select name="coleta_id" id="coleta_id" class="form-control">
-        <option disabled selected value="0">Selecione</option>
-        @foreach($coletas as $e)
-        <option value="{{$e->id}}">{{$e->nome}}</option>
-        @endforeach
-      </select>
+      <label for="nome" id="labelNome">Nome:</label>
+      <input type="text" name="nome" id="nome" value="" class="form-control">
     </div>
-
 
     <div class="form-group">
-      <label for="data" id="labelData">Data:</label>
-      <input type="date" name="data" id="data" value="" class="form-control">
+      <label for="telefone" id="labelTelefone">Telefone:</label>
+      <input type="text" name="telefone" id="telefone" value="" class="form-control">
     </div>
 
-  </div>
+    <div class="form-group">
+      <label for="email" id="labelEmail">Email:</label>
+      <input type="text" name="email" id="email" value="" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label for="endereco" id="labelEndereco">Endereço:</label>
+      <input type="text" name="endereco" id="endereco" value="" class="form-control">
+    </div>
 
 
-  <br>
+    <br>
 
-  <div>
-    <input type="submit" class="btn btn-success" value="Inserir">
-    <input type="reset" class="btn btn-primary "value="Limpar" >
-  </div>
-</form>
+    <div>
+      <input type="submit" class="btn btn-success" value="Inserir">
+      <input type="reset" class="btn btn-primary "value="Limpar" >
+    </div>
+  </form>
 </div>
 
 @endsection

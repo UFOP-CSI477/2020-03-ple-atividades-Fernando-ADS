@@ -8,12 +8,14 @@
       <br>
       <thead class="table-info" >
         <tr>
-          <th>Data</th>
-          <th>Local da Coleta</th>
-          <th>Cidade da Coleta</th>
-          <th>ID Pessoa</th>
-          <th>Nome da Pessoa</th>
-          <th>Tipo Sanguíneo</th>
+          <th>ID</th>
+          <th>Status</th>
+          <th>Cliente</th>
+          <th>Funcionario</th>
+          <th>Produto</th>
+          <th>Quantidade</th>
+          <th>Valor Total</th>
+          <th>Data de Entrega</th>
 
         </tr>
       </thead>
@@ -21,13 +23,15 @@
 
       <tbody class="table-light table-sm">
         <tr>
-          <td>{{$agendamento->data}}</td>
+          <td>{{$venda->id}}</td>
+          <td>{{$venda->status}}</td>
+          <td>{{$venda->cliente->nome}}</td>
+          <td>{{$venda->funcionario->nome}}</td>
+          <td>{{$venda->produto->nome}}</td>
+          <td>{{$venda->quantidade}}</td>
+          <td>{{$venda->valortotal}}</td>
+          <td>{{$venda->dataentrega}}</td>
 
-          <td>{{$agendamento->coleta->nome}}</td>
-          <td>{{$agendamento->coleta->cidade}}</td>
-          <td>{{$agendamento->user->id}}</td>
-          <td>{{$agendamento->user->name}}</td>
-          <td>{{$agendamento->user->tipo}}</td>
         </tr>
 
       </tbody>
@@ -36,16 +40,16 @@
   </div>
 
   <div class="container-fluid">
-    <a href="{{route('agendamentos.edit', $agendamento->id)}}">Editar</a>
+    <a href="{{route('vendas.edit', $venda->id)}}">Editar</a>
   </div>
   <div class="container-fluid">
-    <a href="{{route('agendamentos.index')}}">Voltar</a>
+    <a href="{{route('vendas.index')}}">Voltar</a>
   </div>
 
 
   <div>
     <form  name="frmDelete"
-    action="{{route('agendamentos.destroy', $agendamento->id)}}" method="post" onsubmit="return confirm('Deseja exlcuir?')">
+    action="{{route('vendas.destroy', $venda->id)}}" method="post" onsubmit="return confirm('Deseja exlcuir?')">
 
     @csrf
     @method('DELETE')
