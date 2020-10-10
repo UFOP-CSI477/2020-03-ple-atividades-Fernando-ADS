@@ -105,4 +105,3 @@ class FornecedorController extends Controller
     return redirect()->route('fornecedors.index');
   }
 }
-}

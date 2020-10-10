@@ -1,7 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FuncionarioController;
+use App\Http\Controllers\FornecedorController;
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\VendaController;
+use App\Http\Controllers\OrcamentoController;
+use App\Http\Controllers\MaquinaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

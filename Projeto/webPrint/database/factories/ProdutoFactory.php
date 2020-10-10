@@ -3,26 +3,31 @@
 namespace Database\Factories;
 
 use App\Models\Produto;
+use App\Models\Fornecedor;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProdutoFactory extends Factory
 {
-    /**
-     * The name of the factory's corresponding model.
-     *
-     * @var string
-     */
-    protected $model = Produto::class;
+  /**
+  * The name of the factory's corresponding model.
+  *
+  * @var string
+  */
+  protected $model = Produto::class;
 
-    /**
-     * Define the model's default state.
-     *
-     * @return array
-     */
-    public function definition()
-    {
-        return [
-        
-        ];
-    }
+  /**
+  * Define the model's default state.
+  *
+  * @return array
+  */
+  public function definition()
+  {
+    return [
+      'nome' => $this->faker->company,
+      'valor' => $this->faker->randomFloat,
+      'fornecedor_id' => Fornecedor::factory(),
+
+
+    ];
+  }
 }

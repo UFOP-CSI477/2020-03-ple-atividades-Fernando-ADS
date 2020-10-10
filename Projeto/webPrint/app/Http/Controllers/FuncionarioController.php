@@ -104,4 +104,3 @@ class FuncionarioController extends Controller
     return redirect()->route('funcionarios.index');
   }
 }
-}

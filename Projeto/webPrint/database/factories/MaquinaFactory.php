@@ -3,6 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Maquina;
+use App\Models\Fornecedor;
+
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class MaquinaFactory extends Factory
@@ -22,6 +24,10 @@ class MaquinaFactory extends Factory
     public function definition()
     {
         return [
+          'nome' => $this->faker->company,
+          'marca' => $this->faker->departmentName,
+          'fornecedor_id' => Fornecedor::factory(),
+          'valor' => $this->faker->randomFloat
         ];
     }
 }
