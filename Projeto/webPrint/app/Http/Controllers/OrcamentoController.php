@@ -32,7 +32,6 @@ class OrcamentoController extends Controller
     $clientes = Cliente::get();
     $funcionarios = Funcionario::get();
     $produtos = Produto::get();
-    $orcamentos = Orcamento::get();
     return view('orcamentos.create', ['clientes'=>$clientes, 'funcionarios'=> $funcionarios, 'produtos'=>$produtos]);
 
   }
@@ -75,7 +74,7 @@ class OrcamentoController extends Controller
     $funcionarios = Funcionario::get();
     $produtos = Produto::get();
     $orcamentos = Orcamento::get();
-    return view('orcamentos.edit', ['clientes'=>$clientes, 'funcionarios'=> $funcionarios, 'produtos'=>$produtos, 'orcamentos'=>$orcamentos]);
+    return view('orcamentos.edit', ['clientes'=>$clientes, 'funcionarios'=> $funcionarios, 'produtos'=>$produtos, 'orcamento'=>$orcamento]);
 
   }
 

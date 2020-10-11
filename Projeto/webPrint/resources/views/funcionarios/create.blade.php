@@ -32,8 +32,8 @@
     </div>
 
     <div class="form-group">
-      <label for="senha" id="labelSenha">Senha:</label>
-      <input type="password" name="senha" id="senha" value="" class="form-control">
+      <label for="password" id="labelSenha">Senha:</label>
+      <input type="password" name="password" id="password" value="" class="form-control">
     </div>
 
     <div class="form-group">

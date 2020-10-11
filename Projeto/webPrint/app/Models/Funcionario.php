@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Funcionario extends Model
 {
     use HasFactory;
-    protected $fillable = ['cnpj','nome','telefone','email','password','endereco'];
+    protected $fillable = ['cnpj','nome', 'tipo','telefone','email','password','endereco'];
 
     public function vendas(){
       return $this->hasMany(Venda::class);

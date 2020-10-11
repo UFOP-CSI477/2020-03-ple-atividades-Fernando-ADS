@@ -74,8 +74,7 @@ class VendaController extends Controller
       $clientes = Cliente::get();
       $funcionarios = Funcionario::get();
       $produtos = Produto::get();
-      $vendas = Venda::get();
-      return view('vendas.edit', ['clientes'=>$clientes, 'funcionarios'=> $funcionarios, 'produtos'=>$produtos, 'vendas'=>$vendas]);
+      return view('vendas.edit', ['clientes'=>$clientes, 'funcionarios'=> $funcionarios, 'produtos'=>$produtos, 'venda'=>$venda]);
 
     }
 

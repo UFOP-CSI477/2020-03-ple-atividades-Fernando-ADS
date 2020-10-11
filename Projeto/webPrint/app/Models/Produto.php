@@ -11,11 +11,11 @@ class Produto extends Model
     protected $fillable = ['nome','valor','fornecedor_id'];
 
 public function orcamento(){
-  return $this->belongsTo(Orcamento::class);
+  return $this->hasMany(Orcamento::class);
 }
 
-public function venda(){
-  return $this->belongsTo(Venda::class);
+public function vendas(){
+  return $this->hasMany(Venda::class);
 }
 public function fornecedor(){
   return $this->belongsTo(Fornecedor::class);

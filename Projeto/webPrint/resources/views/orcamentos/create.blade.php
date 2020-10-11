@@ -51,7 +51,7 @@
 
     <div class="form-group">
       <label for="valortotal" id="labelValorTotal">Valor Total:</label>
-      <input type="float" name="valortotal" id="valortotal" value="" class="form-control">
+      <input type="number" step="any" name="valortotal" id="valortotal" value="" class="form-control">
     </div>
 
 

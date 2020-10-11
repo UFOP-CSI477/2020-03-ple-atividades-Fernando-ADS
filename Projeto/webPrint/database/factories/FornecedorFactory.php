@@ -22,7 +22,7 @@ class FornecedorFactory extends Factory
     public function definition()
     {
         return [
-          'cnpj' => $this->faker->cnpj,
+          'cnpj' => $this->faker->ean8,
           'nome' => $this->faker->name,
           'telefone' => $this->faker->phoneNumber,
           'email' => $this->faker->email,

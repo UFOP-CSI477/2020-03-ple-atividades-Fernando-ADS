@@ -93,7 +93,7 @@ class ClienteController extends Controller
   */
   public function destroy(Cliente $cliente)
   {
-    if($cliente->vendas->count()>0){
+    if($cliente->vendas->count()>0 || $cliente->orcamentos->count()>0){
       session()->flash('mensagem', 'Não é permitido excluir! Existem associacões!');
     }
 

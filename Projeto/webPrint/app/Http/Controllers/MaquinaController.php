@@ -68,7 +68,7 @@ class MaquinaController extends Controller
   public function edit(Maquina $maquina)
   {
     $fornecedors = Fornecedor::get();
-    return view('maquinas.edit', ['fornecedors' => $fornecedors, 'maquinas' => $maquinas]);
+    return view('maquinas.edit', ['fornecedors' => $fornecedors, 'maquina' => $maquina]);
 
   }
 
