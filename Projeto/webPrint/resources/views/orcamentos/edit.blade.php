@@ -8,9 +8,31 @@
     @method('PUT')
 
     <div class="form-group">
-      <label for="status" id="labelStatus">Status:</label>
-      <input type="text" name="status" id="status" value="{{$orcamento->status}}" class="form-control">
+      <label for="status" id="labelstatus">Status:</label>
+      <select name="status" id="status" class="form-control">
+        <option value="" disabled selected>Selecione</option>
+
+        <option value="1"
+        @if($orcamento->status == '1')
+          selected
+        @endif
+        >Emitido</option>
+
+        <option value="2"
+        @if($orcamento->status == '2')
+          selected
+        @endif
+        >Aprovado</option>
+
+        <option value="3"
+        @if($orcamento->status == '3')
+          selected
+        @endif
+        >Reprovado</option>
+      </select>
     </div>
+
+
 
     <div class="form-group">
       <label for="cliente_id" id="labelcliente_id">Cliente:</label>
@@ -46,19 +68,19 @@
 
     <div class="form-group">
       <label for="quantidade" id="labelQuantidade">Quantidade:</label>
-      <input type="number" name="quantidade" id="quantidade" value="{{$orcamento->quantidade}}" class="form-control">
+      <input type="number" name="quantidade" id="quantidade" value="{{$orcamento->quantidade}}" class="form-control" required>
     </div>
 
 
     <div class="form-group">
       <label for="valortotal" id="labelValorTotal">Valor Total:</label>
-      <input type="float" name="valortotal" id="valortotal" value="{{$orcamento->valortotal}}" class="form-control">
+      <input type="float" name="valortotal" id="valortotal" value="{{$orcamento->valortotal}}" class="form-control" required>
     </div>
 
 
       <div>
-        <input type="submit" class="btn btn-primary" value="Atualizar">
-        <input type="reset" class="btn btn-info "value="Limpar" >
+        <input type="submit" class="btns" value="Atualizar">
+        <input type="reset" class="btns"value="Limpar" >
       </div>
     </form>
   </div>

@@ -34,8 +34,8 @@
     </div>
 
       <div>
-        <input type="submit" class="btn btn-primary" value="Atualizar">
-        <input type="reset" class="btn btn-info "value="Limpar" >
+        <input type="submit" class="btns" value="Atualizar">
+        <input type="reset" class="btns "value="Limpar" >
       </div>
     </form>
   </div>

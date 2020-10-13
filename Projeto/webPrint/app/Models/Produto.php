@@ -10,7 +10,7 @@ class Produto extends Model
     use HasFactory;
     protected $fillable = ['nome','valor','fornecedor_id'];
 
-public function orcamento(){
+public function orcamentos(){
   return $this->hasMany(Orcamento::class);
 }
 

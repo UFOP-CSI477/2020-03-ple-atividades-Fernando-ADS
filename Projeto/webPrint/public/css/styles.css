@@ -1,0 +1,108 @@
+.fundo {
+  display: table;
+  width: 100%;
+  height: 100vh;
+  color: white;
+  background: url('https://static.vecteezy.com/system/resources/thumbnails/000/664/173/original/Abstract_work_5.jpg');
+  background-position: 30% 45%;
+  background-size: cover;
+}
+
+.img{
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20%;
+  margin: auto;
+}
+
+
+.ptext{
+  text-align: center;
+  font-style: italic;
+  font-size: 13;
+  font-family: sans-serif;
+  letter-spacing: 0;
+  margin-top: 350px;
+}
+
+#logopos {
+	  position:absolute;
+    right: 0px;
+    float: right;
+    width: 180px;
+    padding: 10px;
+    bottom: 0;
+	}
+
+.navbar{
+  background-color: #9c0c0e !important;
+}
+
+.linknav{
+  background-color: #1cc9cf !important;
+}
+
+.navbar-nav > li >a{
+  color: #44e4ec !important;
+}
+.navbar-nav > li:hover >a,
+.navbar-nav > li.active >a
+{
+    color: #1cc9cf !important;
+}
+
+.tbody{
+  background-color: rgba(5, 47, 74  , 0.9);
+}
+
+#card{
+  background-color: rgba(5, 47, 74  , 0.6);
+}
+
+.thead{
+  background-color: #1cc9cf;
+}
+
+.table-striped{
+  color: white !important;
+}
+
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: #1cc9cf;
+}
+
+
+.trd.table-bordered{
+    color: white;
+}{
+  border-color: #ddd !important;
+}
+
+#hover .table-hover {
+color: #fffafa;
+}
+
+
+.btns{
+background: rgb(5, 47, 74, 0.9);
+font-weight: bold;
+color: white;
+border: 0 none;
+border-radius: 5px;
+cursor: pointer;
+padding: 2px 20px;
+}
+
+.btns2{
+background: #1cc9cf;
+font-weight: bold;
+color: white;
+border: 0 none;
+border-radius: 5px;
+cursor: pointer;
+padding: 2px 20px;
+}

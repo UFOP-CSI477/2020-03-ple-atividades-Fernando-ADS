@@ -6,7 +6,7 @@
   <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped" style="text-align:center">
       <br>
-      <thead class="table-info" >
+      <thead class="thead" >
         <tr>
           <th>ID</th>
           <th>Status</th>
@@ -20,10 +20,17 @@
       </thead>
 
 
-      <tbody class="table-light table-sm">
+      <tbody class="tbody">
         <tr>
           <td>{{$orcamento->id}}</td>
-          <td>{{$orcamento->status}}</td>
+          <td>
+            @if($orcamento->status == 1)Emitido
+
+            @elseif($orcamento->status == 2)Aprovado
+
+            @elseif($orcamento->status == 3)Reprovado
+
+            @endif</td>
           <td>{{$orcamento->cliente->nome}}</td>
           <td>{{$orcamento->funcionario->nome}}</td>
           <td>{{$orcamento->produto->nome}}</td>
@@ -37,21 +44,22 @@
   </div>
 
   <div class="container-fluid">
-    <a href="{{route('orcamentos.edit', $orcamento->id)}}">Editar</a>
+    <a class="btns" href="{{route('orcamentos.edit', $orcamento->id)}}">Editar</a>
   </div>
+  <br>
   <div class="container-fluid">
-    <a href="{{route('orcamentos.index')}}">Voltar</a>
+    <a class="btns" href="{{route('orcamentos.index')}}">Voltar</a>
   </div>
+  <br>
 
-
-  <div>
+  <div class="container-fluid">
     <form  name="frmDelete"
     action="{{route('orcamentos.destroy', $orcamento->id)}}" method="post" onsubmit="return confirm('Deseja exlcuir?')">
 
     @csrf
     @method('DELETE')
 
-    <input type="submit" class="btn btn-link" value="Excluir">
+    <input type="submit" class="btns" value="Excluir">
   </form>
 </div>
 

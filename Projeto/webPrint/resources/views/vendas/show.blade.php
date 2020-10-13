@@ -6,7 +6,7 @@
   <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped" style="text-align:center">
       <br>
-      <thead class="table-info" >
+      <thead class="thead" >
         <tr>
           <th>ID</th>
           <th>Status</th>
@@ -21,15 +21,25 @@
       </thead>
 
 
-      <tbody class="table-light table-sm">
+      <tbody class="tbody">
         <tr>
           <td>{{$venda->id}}</td>
-          <td>{{$venda->status}}</td>
+          <td>
+            @if($venda->status == 1)Emitida
+
+            @elseif($venda->status == 2)Pagamento
+
+            @elseif($venda->status == 3)Produção
+
+            @elseif($venda->status == 4)Expedição
+
+            @elseif($venda->status == 5)Finalizada
+            @endif</td>
           <td>{{$venda->cliente->nome}}</td>
           <td>{{$venda->funcionario->nome}}</td>
           <td>{{$venda->produto->nome}}</td>
           <td>{{$venda->quantidade}}</td>
-          <td>{{$venda->valortotal}}</td>
+          <td>R$ {{$venda->valortotal}}</td>
           <td>{{$venda->dataentrega}}</td>
 
         </tr>
@@ -40,21 +50,22 @@
   </div>
 
   <div class="container-fluid">
-    <a href="{{route('vendas.edit', $venda->id)}}">Editar</a>
+    <a class="btns" href="{{route('vendas.edit', $venda->id)}}">Editar</a>
   </div>
+  <br>
   <div class="container-fluid">
-    <a href="{{route('vendas.index')}}">Voltar</a>
+    <a class="btns" href="{{route('vendas.index')}}">Voltar</a>
   </div>
 
-
-  <div>
+<br>
+  <div class="container-fluid">
     <form  name="frmDelete"
     action="{{route('vendas.destroy', $venda->id)}}" method="post" onsubmit="return confirm('Deseja exlcuir?')">
 
     @csrf
     @method('DELETE')
 
-    <input type="submit" class="btn btn-link" value="Excluir">
+    <input type="submit" class="btns" value="Excluir">
   </form>
 </div>
 

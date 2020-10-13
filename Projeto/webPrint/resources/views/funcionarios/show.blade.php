@@ -6,7 +6,7 @@
   <div class="table-responsive">
     <table class="table table-bordered table-hover table-striped" style="text-align:center">
       <br>
-      <thead class="table-danger">
+      <thead class="thead">
         <tr>
           <th>CPF</th>
           <th>Nome</th>
@@ -18,7 +18,7 @@
       </thead>
 
 
-      <tbody class="table-light table-sm">
+      <tbody class="tbody">
         <tr>
           <td>{{$funcionario->cnpj}}</td>
           <td>{{$funcionario->nome}}</td>
@@ -35,21 +35,24 @@
   </div>
 
 <div class="container-fluid">
-  <a href="{{route('funcionarios.edit', $funcionario->id)}}">Editar</a>
+  <a class="btns" href="{{route('funcionarios.edit', $funcionario->id)}}">Editar</a>
 </div>
+
+<br>
+
 <div class="container-fluid">
-  <a href="{{route('funcionarios.index')}}">Voltar</a>
+  <a class="btns" href="{{route('funcionarios.index')}}">Voltar</a>
 </div>
 
-
-<div>
+<br>
+<div class="container-fluid">
   <form  name="frmDelete"
   action="{{route('funcionarios.destroy', $funcionario->id)}}" method="post" onsubmit="return confirm('Deseja exlcuir?')">
 
     @csrf
     @method('DELETE')
 
-    <input type="submit" class="btn btn-link" value="Excluir">
+    <input type="submit" class="btns" value="Excluir">
   </form>
 </div>
 

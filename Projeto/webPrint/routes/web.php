@@ -18,19 +18,27 @@ use App\Http\Controllers\MaquinaController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('principal');
 })->name('principal');
+*/
 
+Route::get('/', function () {
+    return view('home');
+});
 
-Route::resource('/funcionarios', FuncionarioController::class);
-Route::resource('/fornecedors', FornecedorController::class);
-Route::resource('/clientes', ClienteController::class);
-Route::resource('/produtos', ProdutoController::class);
-Route::resource('/vendas', VendaController::class);
-Route::resource('/orcamentos', OrcamentoController::class);
-Route::resource('/maquinas', MaquinaController::class);
+Route::get('/sobre', function () {
+    return view('sobre');
+})->name('sobre');
+
+Route::resource('/funcionarios', FuncionarioController::class)->middleware('auth');
+Route::resource('/fornecedors', FornecedorController::class)->middleware('auth');
+Route::resource('/clientes', ClienteController::class)->middleware('auth');
+Route::resource('/produtos', ProdutoController::class)->middleware('auth');;
+Route::resource('/vendas', VendaController::class)->middleware('auth');
+Route::resource('/orcamentos', OrcamentoController::class)->middleware('auth');
+Route::resource('/maquinas', MaquinaController::class)->middleware('auth');
 
 Auth::routes();
 

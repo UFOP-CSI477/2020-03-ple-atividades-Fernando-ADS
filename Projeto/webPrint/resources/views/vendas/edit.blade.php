@@ -8,9 +8,43 @@
     @method('PUT')
 
     <div class="form-group">
-      <label for="status" id="labelStatus">Status:</label>
-      <input type="text" name="status" id="status" value="{{$venda->status}}" class="form-control">
+      <label for="status" id="labelstatus">Status:</label>
+      <select name="status" id="status" class="form-control">
+        <option value="" disabled selected>Selecione</option>
+
+        <option value="1"
+        @if($venda->status == '1')
+          selected
+        @endif
+        >Emitida</option>
+
+        <option value="2"
+        @if($venda->status == '2')
+          selected
+        @endif
+        >Pagamento</option>
+
+        <option value="3"
+        @if($venda->status == '3')
+          selected
+        @endif
+        >Produção</option>
+
+        <option value="4"
+        @if($venda->status == '4')
+          selected
+        @endif
+        >Expedição</option>
+
+        <option value="5"
+        @if($venda->status == '5')
+          selected
+        @endif
+        >Finalizada</option>
+
+      </select>
     </div>
+
 
     <div class="form-group">
       <label for="cliente_id" id="labelcliente_id">Cliente:</label>
@@ -46,29 +80,26 @@
 
     <div class="form-group">
       <label for="quantidade" id="labelQuantidade">Quantidade:</label>
-      <input type="number" name="quantidade" id="quantidade" value="{{$venda->quantidade}}" class="form-control">
+      <input type="number" name="quantidade" id="quantidade" value="{{$venda->quantidade}}" class="form-control" required>
     </div>
 
 
     <div class="form-group">
       <label for="valortotal" id="labelValorTotal">Valor Total:</label>
-      <input type="float" name="valortotal" id="valortotal" value="{{$venda->valortotal}}" class="form-control">
+      <input type="number" step="any" name="valortotal" id="valortotal"  value="{{$venda->valortotal}}" class="form-control" required>
     </div>
 
       <div class="form-group">
         <label for="dataentrega" id="labelData">Data:</label>
-        <input type="date" name="dataentrega" id="dataentrega" value="{{$venda->dataentrega}}" class="form-control">
+        <input type="date" name="dataentrega" id="dataentrega" value="{{$venda->dataentrega}}" class="form-control" required>
       </div>
 
 
       <div>
-        <input type="submit" class="btn btn-primary" value="Atualizar">
-        <input type="reset" class="btn btn-info "value="Limpar" >
+        <input type="submit" class="btns" value="Atualizar">
+        <input type="reset" class="btns "value="Limpar" >
       </div>
     </form>
   </div>
 
   @endsection
-  <!--
-  Fernando Aparecido da Silva - 1518291
--->
